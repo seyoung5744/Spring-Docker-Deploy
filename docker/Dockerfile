@@ -6,4 +6,4 @@ ARG JAR_FILE=./*.jar
 ### JAR_FILE 경로에 해당하는 파일을 Docker 이미지 내부로 복사한다.
 COPY ${JAR_FILE} spring-docker.jar
 ### Docker 컨테이너가 시작될 때 실행할 명령을 지정한다.
-ENTRYPOINT ["java","-jar","/spring-docker.jar"]
+CMD ["java","-jar", "-Dspring.profiles.active=${active}","/spring-docker.jar"]
