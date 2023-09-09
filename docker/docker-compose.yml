@@ -2,6 +2,7 @@ version: "3"
 services:
   web:            # nginx 컨테이너 이름 (원하는 이름)
     image: nginx
+    container_name: nginx
     ports:
       - 80:80
     volumes:
