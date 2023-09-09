@@ -1,4 +1,27 @@
-logging-module:
-  version: 0.0.1
+#logging-module:
+#  version: 0.0.1
+#server:
+#  port: 8081
+
+spring:
+  profiles:
+    group:
+      "real1": "real1_port"
+      "real2": "real2_port"
+---
+spring:
+  config:
+    activate:
+      on-profile: "real1_port"
+
 server:
   port: 8081
+
+---
+spring:
+  config:
+    activate:
+      on-profile: "real2_port"
+
+server:
+  port: 8082

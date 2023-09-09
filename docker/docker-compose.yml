@@ -1,0 +1,14 @@
+version: "3"
+services:
+  web:            # nginx 컨테이너 이름 (원하는 이름)
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - /etc/nginx/:/etc/nginx/
+  spring:         # Spring Boot 컨테이너 이름 (원하는 이름)
+    build: .
+    ports:
+      - 8081:8081
+    volumes:
+      - ./:/root/
